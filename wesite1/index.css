@@ -1,15 +1,20 @@
 *{
     box-sizing: border-box;
 }
+
+/*body*/
 body{
     background-color: aliceblue;
-    width: 100vw;
     height: auto;
     display: grid;
     grid-template-rows: 10vh auto;
     margin: 0;
-    padding: 1em;
+    padding: 2em;
 }
+
+
+/* navigation bar*/
+
 .nav-bar{
     background-color: rgb(7, 7, 46);
     position: sticky;
@@ -19,9 +24,23 @@ body{
     text-align: center;
     align-items: center;
     padding: 2em;
-    border-radius: 2em;
+    border: 0.3em rgb(8, 16, 122) groove;
+    /* border-radius: 2em; */
     opacity: 0.9;
+    top:     0;
 }
+
+/*when screen normal*/
+.nav-element a{
+    text-decoration: none;
+    color: rgb(180, 255, 230);
+    cursor: pointer;
+}
+.nav-element:hover{
+    transform: scale(1.2);
+}
+
+/*for small screen*/
 .nav-button{
     display: none;
     position: relative;
@@ -29,13 +48,6 @@ body{
     width: 100%;
     height: 100%;
     background-color: black;
-}
-.animate{
-    animation: rotate 0.4s ease;
-}
-.nav-button-table{
-    display: none;
-    background-color: inherit;
 }
 .nav-button-image{
     display: flex;
@@ -46,6 +58,29 @@ body{
 }
 .nav-button-image img{
     cursor: pointer;
+}
+.nav-button-table{
+    display: none;
+    background-color: inherit;
+}
+.nav-button-table table{
+    width: 100%;
+    height: 100%;
+}
+.nav-button-table table tr td{
+    font-size: large;
+    border: 0.1px rgb(15, 15, 15) groove;
+    cursor: pointer;
+}
+.nav-button-table td:hover{
+    background-color:rgb(24, 24, 46);
+    border: none;
+    font-size: larger;
+}
+
+/*animation of nav-image*/
+.animate{
+    animation: rotate 0.4s ease;
 }
 @keyframes rotate{
     0%{
@@ -82,24 +117,8 @@ body{
         transform: rotate(360deg);
     }
 }
-.nav-button-table table{
-    width: 100%;
-    height: 100%;
-    
-}
-.nav-button-table table tr td{
-    font-size: large;
-    border: 1px rgb(27, 27, 27) solid;
-}
-.nav-element a{
-    text-decoration: none;
-    color: rgb(180, 255, 230);
-    cursor: pointer;
-}
-.nav-element:hover{
-    transform: scale(1.2);
-}
-@media only screen and (max-width:500px){
+
+@media (max-width:500px){
 
     .nav-bar{
         padding: 0;
@@ -110,4 +129,64 @@ body{
     .nav-element{
         display: none;
     }
+    .img-div{
+        border: none;
+        height: 50vh;
+    }
+    .img-div{
+        border-radius: 0;
+    }
+    .content-div{
+        padding: 0;
+    }
+    .content-div p{
+        padding: 0;
+    }
+}
+
+/*image and title*/
+.container{
+    /* background-color: aqua; */
+    width: 100%;
+}
+.img-div{
+    background-image: url("img2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* border-radius: 1em; */
+    border: none;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.img-div h1{
+    color: rgb(107, 188, 255);
+    font-weight: bolder;
+    font-size: calc(5vw);
+
+
+
+}
+/*content divs*/
+
+.content-div{
+    justify-content:center;
+    padding: 5em 10em;
+    font-size: larger;
+    text-align: center;
+    gap: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.content-div p{
+    padding: 2em;
+}
+.footer{
+    height: 20vh;
+    width: auto;
+    background-color: rgb(45, 5, 83);
 }
