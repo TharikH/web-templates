@@ -1,0 +1,143 @@
+.navbar{
+    background-color: black;
+    border-bottom: 2px #CDFFDB solid ;
+}
+.navbar a{
+    color: #CDFFDB;
+}
+.navbar a:hover,.active a{
+    color: rgb(124, 248, 159) !important;
+}
+.navbar-nav{
+    justify-content: space-between;
+}
+.image-div{
+    height: calc(60vh + 20vw);
+    position: relative;
+}
+.img-fluid{
+    height: 100%;
+}
+.wire-btn{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 80px;
+    background-color: #2F9300;
+    border:16px #2E2E2E solid;
+    display:flex;
+}
+.wire-btn a{
+    color: rgb(255, 255, 255);
+    font-size: 150%;
+    margin-bottom: 3px;
+}
+.wire-btn a:hover{
+    color: black;
+}
+.row-content{
+    background-color:#B2F0D2;
+    width: 100%;
+    min-height: 400px;
+    font-size: 130%;
+    border:1px solid #2F9300;
+    box-shadow: 1px 1px 2px 2px rgb(94, 197, 103);
+}
+.row-content h3{
+    font-weight: bolder;
+    font-size: 200%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.team-row{
+    justify-content: space-between;
+    background-color: black;
+    position: relative;
+    min-height: 500px;
+    width: 100%;
+}
+.team-content{
+    background-color: rgb(10, 151, 17);
+    min-height: 300px;
+    border: 2px white solid;
+}
+.team-content .circle{
+    display: block;
+    margin:0px;
+    border-radius: 100%;
+}
+.bg-green{
+    background-color: rgb(99, 228, 149);
+    color: black;
+}
+button.bg-green:hover{
+    background-color: rgb(82, 255, 1);
+}
+button.bg-green{
+    background-color: rgb(23, 153, 136);
+}
+.form-class{
+    border: 2px green ridge;
+    background-color: rgb(49, 153, 55);
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    font-weight: bolder;
+}
+.footer{
+    background-color: rgb(0, 0, 0);
+    border: 3px rgb(173, 238, 140) solid;
+    color: rgb(18, 163, 25);
+    font-size: large;
+    font-weight: bold;
+}
+.footer a.btn:hover{
+    transform: scale(1.1);
+    transition: linear 0.2s;
+    color: black;
+    font-weight: bolder;
+}
+.footer h3{
+    font-weight: bolder;
+}
+.social .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .social.fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+@media screen and (max-width: 768px) {
+    .form-class{
+        background-color: rgb(255, 255, 255);
+        border:1px black solid;
+    }
+  }
+
+
