@@ -1,15 +1,16 @@
 <?php 
 require_once 'connect.php'; 
-if(!isset($_GET['name'])){
-    die("Name para missing");
+
+if(!isset($_SESSION['usr'])){
+    die("not logged in");
 }
 function valid($m, $y ,$mi)
 {
     if ($m == "" or $y == "" or $mi=="") {
-        echo "values shouldnt be empty";
+        $_SESSION['msg']= "values shouldnt be empty";
         return false;
     } else if (!(is_numeric($mi) && is_numeric($y))){
-        echo "mileage and year should be numeric";
+        $_SESSION['msg']="mileage and year should be numeric";
         return false;
     } else {
         return true;
@@ -26,12 +27,12 @@ function insertAuto($m,$y,$mil,$pdo){
     return true;
 }
 ?>
-<h1>Tracking autos for <?php echo $_GET['name']; ?></h1>
+<h1>Tracking autos for <?php echo $_SESSION['usr']; ?></h1>
 <p style="color: red;">
 <?php
 if(isset($_POST['submit'])){
     if($_POST['submit']=="logout"){
-        header('Location:/index.php');
+        header('Location:/view.php');
         exit();
     }
     $make=$_POST['make'];
@@ -39,10 +40,16 @@ if(isset($_POST['submit'])){
     $mil=$_POST['mileage'];
     if(valid($make,$year,$mil)){
         if(insertAuto($make,$year,$mil,$pdo)){
-            echo "<span style='color: green';> data inserted succesfully</span>";
+            $_SESSION['msg']="<span style='color: green';> data inserted succesfully</span>";
         }
     }
+    header("Location:autos.php");
+    return;
 
+}
+if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
 }
 
 ?>

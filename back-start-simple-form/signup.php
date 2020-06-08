@@ -1,30 +1,29 @@
 <?php
 require_once 'connect.php';
-
 function valid($nam, $pass)
 {
     if ($nam == "" or $pass == "") {
-        echo "email and password shouldnt be empty";
+        $_SESSION['msg'] = "email and password shouldnt be empty";
         return false;
     } else if (!filter_var($nam, FILTER_VALIDATE_EMAIL)) {
         // !preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $nam)
-        echo "email not valid";
+        $_SESSION['msg'] = "email not valid";
         return false;
     } else {
         return true;
     }
 }
-function  insertData($email, $pass,$pdo)
+function  insertData($email, $pass, $pdo)
 {
     var_dump($pdo);
     echo "<br>===<br>";
     $val = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO user (email, password) VALUES (:email, :pass)";
-    $stm=$pdo->prepare($sql);
+    $stm = $pdo->prepare($sql);
     var_dump($stm);
-    echo "<br>".$val."<br>".$email."<br>";
+    echo "<br>" . $val . "<br>" . $email . "<br>";
     $stm->execute(array(
-        ':email' => $email ,
+        ':email' => $email,
         ':pass' => $val
     ));
     return true;
@@ -46,8 +45,15 @@ function  insertData($email, $pass,$pdo)
             if (valid($email, $pass)) {
                 insertData($email, $pass, $pdo);
                 header('Location:login.php');
+                return;
             }
         }
+        header("Location:signup.php");
+        exit();
+    }
+    if (isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
     }
 
 

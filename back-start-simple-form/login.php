@@ -2,11 +2,11 @@
 require_once 'connect.php';
 function valid($nam,$pass){
     if($nam == "" or $pass == ""){
-        echo "email and password shouldnt be empty";
+        $_SESSION['msg']="email and password shouldnt be empty";
         return false;
     }
     else if(!filter_var($nam,FILTER_VALIDATE_EMAIL)){
-        echo "email not valid";
+        $_SESSION['msg']="email not valid";
         return false;
     }
     else{
@@ -22,14 +22,13 @@ function validDB($nam,$pass,$pdo){
     $row=$stm->fetch(PDO::FETCH_ASSOC);
     // var_dump($row);
     if($row == false){
-        echo "not a valid user";
+        $_SESSION['msg']= "not a valid user";
         return false;
     }
     else{
     $val=$row['password'];
     if(!password_verify($pass,$val)){
-        echo "Password wrong";
-        error_log("Login fail ".$nam." $check");
+        $_SESSION['msg']="Password wrong";
         return false;
     }
     else{
@@ -52,10 +51,19 @@ if(isset($_POST['submit'])){
         $pass=$_POST['pass'];
         if(valid($email,$pass)){
             if(validDB($email,$pass,$pdo)){
-                header("Location: autos.php?name=".urlencode($email));
+                $_SESSION['usr']=$email;
+                // $_SESSION['msg']="Successfully entered";
+                header("Location: autos.php");
+                return;
             }
         }
     }
+    header("Location:login.php");
+    return;
+}
+if(isset($_SESSION['msg'])){
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
 }
 
 
