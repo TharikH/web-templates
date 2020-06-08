@@ -18,8 +18,8 @@
         or <a href="signup.php">signup</a>
     </p>
     <p>
-        if we go via <a href="autos.php">autos</a> directly error occurs</p>
-    <p> if we go to <a href="view.php">view</a> directly error occurs
+        if we go via <a href="autos.php">autos</a> directly error occurs
+    </p>
 </body>
 
 </html>

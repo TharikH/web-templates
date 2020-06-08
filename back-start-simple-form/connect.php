@@ -8,4 +8,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     .point{
         cursor: pointer;
     }
+    td{
+        border: 2px black groove;
+        text-align: center;
+    }
 </style>
