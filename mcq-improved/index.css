@@ -1,0 +1,130 @@
+*{
+  box-sizing: border-box;  
+}
+.container{
+    min-height: 50vh;
+    width: calc(100px + 30vw);
+    background-color: rgb(126, 236, 236);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: grid;
+    grid-template-rows: 50% 40% 10%;
+    pointer-events: none;
+    z-index: 1;
+}
+.cover{
+    z-index: 10;
+}
+.cover,.f-cover{
+    min-height: 50vh;
+    width: calc(100px + 30vw);
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.f-cover{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    z-index: 0;
+}
+.f-cover p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: larger;
+}
+.but{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    border: 2px white groove;
+    cursor: pointer;
+    color: aliceblue;
+}
+.but:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.loader {
+    border: 5px solid #000000;
+    border-top: 5px solid #929292;
+    border-right: 5px solid #929292;
+    border-bottom: 5px solid #929292;
+    border-radius: 50%;
+    position: absolute;
+    top: 55%;
+    left: 46%; 
+    width: 40px;
+    height: 40px;
+    animation: spin 0.75s linear infinite;
+    display: none;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+.content{
+    background-color: rgb(17, 9, 9);
+    width: 100%;
+    min-height: 200px;
+    position: relative;
+    color: azure;
+    text-align: center;
+    display: inline;
+    padding: 10%;
+}
+.options{
+    display: flex;
+    flex-wrap: wrap;
+}
+.button{
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    color: bisque;
+    border: 1px white solid;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(19, 60, 63)!important;
+}
+.changer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    background-color: rgb(27, 93, 119);
+    color: black;
+    margin: 0;
+    font-weight: bolder;
+}
+#next,#prev{
+    background-color: rgb(0, 0, 0);
+    height: 30px;
+    width: 70px;
+    padding-top: 6px;
+    color: azure;
+    cursor: pointer;
+}
+#next:hover,#prev:hover{
+    background-color: antiquewhite;
+    color: black;
+}
+#next{
+    text-align: right;
+}
