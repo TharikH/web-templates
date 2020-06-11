@@ -13,6 +13,7 @@
     </div>
     <div class="f-cover">
         <p>Thanks For attending</p>
+        <p id="point"> </p>
     </div>
     <div class="container">
         <div class="content" id="content">

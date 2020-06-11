@@ -1,8 +1,7 @@
 count=1;
 counter=0;
 num=3;
-datas={};
-
+datas=[0,0,0,0];
 function ajaxCall(ch){
     $.ajax({
         type: "POST",
@@ -25,6 +24,20 @@ function ajaxCall(ch){
 
 function finish(){
     $('.container').hide();
+    $.ajax({
+        type: "POST",
+        url: "ajax.php",
+        // dataType: 'json',
+        data: {arr:datas},
+        success: function (data) {
+            $('#point').text("your point is "+data);
+            return true;
+        },
+        error:function(){
+            alert("Some error occured, please refresh");
+            return false;
+        }
+    });
 }
 $(document).ready(function () {
 
@@ -51,8 +64,7 @@ $(document).ready(function () {
     // })
 });
 function optionClick(){
-    datas.count=$(this).attr('id');
-    console.log(datas.count);
+    datas[count]=$(this).attr('id');
     $('.button').css('background-color','rgb(0, 0, 0)');
     $(this).css('background-color','rgb(19, 60, 63)');
 }

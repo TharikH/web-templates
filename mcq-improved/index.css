@@ -39,6 +39,9 @@
     transform: translate(-50%,-50%);
     font-size: larger;
 }
+#point{
+    top:55%;
+}
 .but{
     position: absolute;
     top: 50%;
