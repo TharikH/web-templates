@@ -1,0 +1,43 @@
+.navbar-nav,.card-footer,.modal-footer{
+    justify-content: space-between;
+}
+.logo{
+    font-size: large;
+    font-weight: bolder;
+    font-variant: small-caps;
+}
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+body{
+    /* background-color: rgb(60, 214, 29); */
+}
+.fa:hover{
+    color: rgb(0, 81, 255);
+    cursor: pointer;
+}
+.fa-heart:hover{
+    color:red;
+}
+a{
+    color:black;
+}
+.col-lg-4 .card{
+    width: 18rem;;
+}
+  @media only screen and (max-width: 300px){
+        .col-lg-4 .card{
+            width: 14rem;
+        }
+  } 
+
+.font-large{
+    font-size: large;
+}
+.font-low{
+    font-size: 85%;
+    border-top: 2px black groove;
+    border-bottom: 2px black groove;
+}
