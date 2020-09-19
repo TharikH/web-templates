@@ -1,0 +1,26 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  .bg {
+  background-image: url("5.jpg");
+  height: 86vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .col-cont{
+    /* padding: 1rem 20rem; */
+    justify-content: center;
+    /* background-color: #65696d; */
+    /* border: 2px solid #fff; */
+    color: rgb(0, 0, 0);
+    /* text-align: center; */
+    }
+    .heading{
+      font-weight: bolder;
+    }
+    .underline{
+      text-decoration: underline;
+    }
