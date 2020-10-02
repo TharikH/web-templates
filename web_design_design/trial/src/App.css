@@ -12,6 +12,11 @@
 .Navbar{
    
 }
+.zindex{
+    z-index: 5000;
+    background-color: #00ff15;
+    position:fixed;
+}
 .logo{
     font-weight: bolder;
     font-family: sans-serif;
