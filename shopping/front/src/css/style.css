@@ -15,4 +15,11 @@
     scrollbar-arrow-color: black;
     scrollbar-face-color: aqua;
 }
+.img-fluid{
+    width: 100% !important;
+    background-size: contain;
+}
+.card-image{
+    min-height: 484px;
+}
 

@@ -3,9 +3,9 @@ import '../css/style.css';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
 
-const Carousel = () => {
+const Carousel = (props) => {
   return (
-    <MDBContainer fluid>
+    <MDBContainer fluid className={props.margin}>
       <MDBCarousel
         activeItem={1}
         length={3}
